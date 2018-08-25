@@ -13,7 +13,7 @@ from asyncio import sleep
 
 
 logging.basicConfig(level='INFO')
-bot = commands.Bot(command_prefix='f.')
+bot = commands.Bot(command_prefix='d!')
 bot.load_extension("admin")
 bot.remove_command('help')
 bot.load_extension("music")
@@ -94,7 +94,7 @@ async def purge(ctx, number : int):
 async def help(ctx):
     """Help"""
     em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
-    em.set_author(name="Flex Help")
+    em.set_author(name="TheDark Help")
     em.add_field(name="Funny", value='`say,ping,cat,avatar,8ball`', inline=False)
     em.add_field(name="Info", value='`playerinfo,serverinfo,botinfo,lenny,respect,support`', inline=False)
     em.add_field(name="Moderation", value='`kick,ban,purge`', inline=False)
@@ -108,7 +108,7 @@ async def help(ctx):
 async def support(ctx):
     """support"""
     em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
-    em.add_field(name=' Support Server', value='[Join ]( https://discord.gg/CYr83P6 )')
+    em.add_field(name=' Support Server', value='[Join ]( https://discord.gg/9tckkF4 )')
     em.set_thumbnail(url=ctx.me.avatar_url)
     msg = await ctx.send(embed=em)
 
@@ -119,16 +119,16 @@ async def support(ctx):
 async def invite(ctx):
         """invite"""
         em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
-        em.add_field(name=' Invite Flex In your server!', value='[Invite ]( https://discordapp.com/api/oauth2/authorize?client_id=458912845438910464&permissions=201603158&scope=bot )')
+        em.add_field(name=' Invite TheDark In your server!', value='[Invite ]( https://discordapp.com/api/oauth2/authorize?client_id=482856239202566145&permissions=8&scope=bot )')
         em.set_thumbnail(url=ctx.me.avatar_url)
         msg = await ctx.send(embed=em)
 
 @bot.command()
 async def feedback(ctx, *, message=None):
     if message is None:
-        await ctx.send('Hey, please do `f.feedback <feedback>`')
+        await ctx.send('Hey, please do `d!feedback <feedback>`')
     if message is not None:
-        await bot.get_channel(465463335228407808).send(f'{ctx.author.name} reported: {message}')
+        await bot.get_channel(481842101844443146).send(f'{ctx.author.name} reported: {message}')
         await ctx.send('Your feedback was reported to the team')
 
 
@@ -136,16 +136,16 @@ async def feedback(ctx, *, message=None):
 @bot.command()
 async def bug(ctx, *, message=None):
     if message is None:
-        await ctx.send('Hey, please do `f.bug <bug>`')
+        await ctx.send('Hey, please do `d!bug <bug>`')
     if message is not None:
-        await bot.get_channel(465462946718547978).send(f'{ctx.author.name} reported: {message}')
+        await bot.get_channel(481842101844443146).send(f'{ctx.author.name} reported: {message}')
         await ctx.message.channel.send('Your problem was reported to the team')
 
 
 @bot.listen()
 async def on_message(message : discord.Message):
     if bot.user.mentioned_in(message):
-        await message.channel.send(':sleeping: | You woke me up :( . My prefix is `f.` , for a list of commands type `f.help`', delete_after=10)
+        await message.channel.send(':sleeping: | You woke me up :( . My prefix is `d!` , for a list of commands type `d!help`', delete_after=10)
 
 @bot.listen()
 async def on_command_error(ctx, error):
@@ -323,11 +323,11 @@ async def presence():
                 if u.bot == False:
                     a = a + 1
 
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s servers | f.help' % (len(bot.guilds))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s servers | d!help' % (len(bot.guilds))))
         await sleep(30)
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | f.help' % (len(bot.users))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | d!help' % (len(bot.users))))
         await sleep(30)
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=' empero-flex.ml | f.help'))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=' empero-flex.ml | d!help'))
         await sleep(30)
 
 
@@ -342,7 +342,7 @@ async def binfo(ctx):
     em.add_field(name="Prefix", value=ctx.bot.command_prefix, inline=True)
     em.add_field(name="Made with", value='Python 3.6.6', inline=True)
     em.add_field(name="Tag:", value=ctx.me.discriminator, inline=True)
-    em.add_field(name="Creator", value='<@353967891319619587>', inline=True)
+    em.add_field(name="Creator", value='<@449666730680254516>', inline=True)
     em.add_field(name="Created at", value=ctx.bot.user.created_at, inline=True)
     em.set_thumbnail(url=ctx.me.avatar_url)
     msg = await ctx.send(embed=em)
@@ -361,7 +361,7 @@ async def botinfo(ctx):
     em.add_field(name="Prefix", value=ctx.bot.command_prefix, inline=True)
     em.add_field(name="Made with", value='Python 3.6.6', inline=True)
     em.add_field(name="Tag:", value=ctx.me.discriminator, inline=True)
-    em.add_field(name="Creator", value='<@353967891319619587>', inline=True)
+    em.add_field(name="Creator", value='<@449666730680254516>', inline=True)
     em.add_field(name="Created at", value=ctx.bot.user.created_at, inline=True)
     em.set_thumbnail(url=ctx.me.avatar_url)
     msg = await ctx.send(embed=em)
